@@ -793,10 +793,10 @@
           ]
         },
         "terms": {
-          "title": "Terms of use", "updated": "2026.10.09",
+          "title": "Terms of use", "updated": "2026.10.20",
           "body": [
             ["In one sentence", "Browse the site, share the writing, link to anything - just don't pretend to be us, and don't hammer the server."],
-            ["What the site is", "wesan.co is the marketing and information site for Wesan A.Ş. and its divisions. Nothing on this site is a contract, a financial offer, or a regulatory commitment."],
+            ["What the site is", "wesan.co is the marketing and information site for Wesan, the trading name of Can Akyüz, and its divisions. Nothing on this site is a contract, a financial offer, or a regulatory commitment."],
             ["What you can do", "You can read, share, link, quote, and screenshot anything here. No need to ask. Attribution is appreciated."],
             ["What you can't do", "Don't impersonate Wesan. Don't scrape the site to train a model without telling us. Don't use the trademarks on a product that isn't ours."],
             ["No warranties", "The site is provided as-is. We don't promise it will be online every second; we do try."],
@@ -1113,7 +1113,7 @@
           "You have worked across genres. Narrative is the form, but the craft is broader.",
           "You speak Turkish, or are eager to."
         ],
-        "comp": "Senior creative compensation, structured as a 5-year commitment. Real equity in Studio GmbH.",
+        "comp": "Senior creative compensation, structured as a 5-year commitment. Real equity in Wesan Studio.",
         "reportingTo": "Founder, Wesan",
         "teamMeta": "Studio · forming · target team of 6"
       },
@@ -1148,7 +1148,7 @@
           "Custom engine experience (we are choosing the engine in month 2).",
           "Worked on narrative games before - you know how light tells a story."
         ],
-        "comp": "Senior craft compensation. Equity in Studio GmbH.",
+        "comp": "Senior craft compensation. Equity in Wesan Studio.",
         "reportingTo": "Game Director",
         "teamMeta": "Studio · forming · target team of 6"
       }
