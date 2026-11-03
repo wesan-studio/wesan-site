@@ -20,12 +20,9 @@ export const metadata: Metadata = {
   openGraph: { type: 'website', siteName: 'Wesan', locale: 'en_GB', description: DESCRIPTION },
   twitter: { card: 'summary_large_image' },
   icons: {
-    // Dark mark by default (light browser chrome); white mark when the OS/browser is in dark mode.
-    icon: [
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/favicon-light.ico', sizes: '32x32', media: '(prefers-color-scheme: dark)' },
-    ],
-    apple: { url: '/logo.png' },
+    // MELTIR shield on night navy (logo kit); the same tile reads on light and dark browser chrome.
+    icon: [{ url: '/favicon.ico', sizes: '16x16 32x32 48x48' }],
+    apple: { url: '/brand/apple-touch-icon.png', sizes: '180x180' },
   },
 };
 

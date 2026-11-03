@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Icon } from './icons';
 import { useContent } from '@/lib/content-provider';
@@ -13,7 +12,7 @@ export function Wordmark({ size = 18 }: { size?: number }) {
   const mark = size + 10;
   return (
     <Link href="/" className="nav-mark">
-      <Image src="/logo.png" alt={brand} width={mark} height={mark} className="nav-logo" priority />
+      <span className="brand-mark" style={{ width: mark, height: mark }} aria-hidden="true" />
       <span className="word">{brand}</span>
     </Link>
   );
@@ -136,7 +135,7 @@ export function Footer() {
       <div className="foot-inner">
         <div>
           <Link href="/" className="foot-mark">
-            <Image src="/logo.png" alt={c.common.brand} width={28} height={28} className="foot-logo" />
+            <span className="brand-mark" style={{ width: 28, height: 28 }} aria-hidden="true" />
             <span className="word">{c.common.brand}</span>
           </Link>
           <p style={{ color: 'var(--ink-3)', fontSize: '14px', maxWidth: '300px', marginBottom: '20px' }}>

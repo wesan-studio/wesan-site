@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { ImageResponse } from 'next/og';
 
 export const alt = 'Wesan · Practical AI, useful software';
@@ -11,6 +13,9 @@ const DOTS = Array.from({ length: 140 }, (_, i) => ({
   o: 0.15 + ((i * 13) % 10) / 20,
 }));
 
+// The MELTIR shield (logo kit), inlined: ImageResponse fetches no files on its own.
+const MARK = `data:image/svg+xml;base64,${readFileSync(join(process.cwd(), 'public/brand/mark-ivory.svg')).toString('base64')}`;
+
 export default function OpengraphImage() {
   return new ImageResponse(
     (
@@ -18,7 +23,11 @@ export default function OpengraphImage() {
         {DOTS.map((d, i) => (
           <div key={i} style={{ position: 'absolute', left: d.x, top: d.y, width: 4, height: 4, background: '#d6dbe2', opacity: d.o }} />
         ))}
-        <div style={{ display: 'flex', fontSize: 30, letterSpacing: 6, fontWeight: 600 }}>WESAN</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 18, fontSize: 30, letterSpacing: 6, fontWeight: 600 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={MARK} width={46} height={48} alt="" />
+          WESAN
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', fontSize: 76, lineHeight: 1.02, fontWeight: 600, letterSpacing: -1, maxWidth: 900 }}>
             Practical AI. Useful software. Built around your work.

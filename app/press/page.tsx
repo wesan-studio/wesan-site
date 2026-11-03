@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Press kit for Wesan: boilerplate, facts, logos and contacts.',
 };
 
-interface Logo { label: string; file: string; fg: string; bg: string; markOnly: boolean }
+interface Logo { label: string; file: string; href?: string; fg: string; bg: string; markOnly: boolean }
 interface TypeDef { fam: string; use: string; sample: string; cssFam: string }
 interface Boiler { len: string; body: string }
 
@@ -30,22 +30,15 @@ interface PressContent {
   factsRight: [string, string][];
 }
 
-function WMark({ color = 'currentColor', size = 32 }: { color?: string; size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 28 28" aria-hidden="true">
-      <g fill={color}>
-        <path d="M5 7 L7 7 Q9 7 7.5 11 L4.5 19 L7 19 L11 11 Q12 7 10 7 L8 7 Z" />
-        <path d="M10 7 L12 7 Q14 7 12.5 11 L9.5 19 Q9 20 10 20 L12 20 Q13 20 13.5 19 L16.5 11 Q18 7 16 7 L13 7 Z" opacity="0.85" />
-        <path d="M16 7 L18 7 Q20 7 18.5 11 L14.5 20 L16.5 20 Q18 20 19 18.5 L23 11 Q24 7 22 7 Z" opacity="0.7" />
-      </g>
-    </svg>
-  );
+// The mark is the MELTIR shield from the logo kit, painted through a CSS mask so the colour follows the card.
+function Mark({ color, size }: { color: string; size: number }) {
+  return <span className="brand-mark full" style={{ width: size, height: size, background: color }} aria-hidden="true" />;
 }
 
 function Lockup({ color, size }: { color: string; size: number }) {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-      <WMark color={color} size={size + 14} />
+      <Mark color={color} size={size + 14} />
       <span style={{ fontFamily: 'var(--font-display)', fontSize: '28px', fontWeight: 600, letterSpacing: '0.06em', color, textTransform: 'uppercase' }}>Wesan</span>
     </div>
   );
@@ -73,12 +66,12 @@ export default async function PressPage() {
             {c.logos.map((p) => (
               <article key={p.label} className="card" style={{ padding: '0', background: 'var(--paper-3)' }}>
                 <div style={{ background: p.bg, aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--rule)' }}>
-                  {p.markOnly ? <WMark color={p.fg} size={48} /> : <Lockup color={p.fg} size={20} />}
+                  {p.markOnly ? <Mark color={p.fg} size={64} /> : <Lockup color={p.fg} size={20} />}
                 </div>
                 <div style={{ padding: '14px 16px' }}>
                   <div className="mono mb-2" style={{ fontSize: '10px', color: 'var(--ink-3)', letterSpacing: '0.12em' }}>{p.label}</div>
                   <div className="mono" style={{ fontSize: '11.5px', color: 'var(--ink-2)' }}>{p.file}</div>
-                  <a href="#" className="mono" style={{ fontSize: '11px', color: 'var(--accent)', marginTop: '8px', display: 'inline-block', letterSpacing: '0.08em' }}>{c.downloadSvgLabel}</a>
+                  {p.href ? <a href={p.href} download className="mono" style={{ fontSize: '11px', color: 'var(--accent)', marginTop: '8px', display: 'inline-block', letterSpacing: '0.08em' }}>{c.downloadSvgLabel}</a> : null}
                 </div>
               </article>
             ))}

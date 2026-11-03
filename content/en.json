@@ -875,10 +875,10 @@
       "contactLabel": "Press contact",
       "logosHead": { "num": "02", "label": "LOGO + WORDMARK", "title": "Use it big. Use it small. Don't redraw it." },
       "logos": [
-        { "label": "WORDMARK · DARK ON LIGHT", "file": "wesan-wordmark.svg", "fg": "var(--ink)", "bg": "var(--paper-3)", "markOnly": false },
-        { "label": "WORDMARK · LIGHT ON DARK", "file": "wesan-wordmark-inverted.svg", "fg": "var(--paper)", "bg": "var(--ink)", "markOnly": false },
-        { "label": "MARK ONLY · SQUARE", "file": "wesan-mark.svg", "fg": "var(--ink)", "bg": "var(--paper-3)", "markOnly": true },
-        { "label": "MARK · INVERTED", "file": "wesan-mark-inverted.svg", "fg": "var(--paper)", "bg": "var(--ink)", "markOnly": true }
+        { "label": "LOCKUP · DARK ON LIGHT", "file": "Mark + WESAN in Inter Tight", "fg": "var(--ink)", "bg": "var(--paper-3)", "markOnly": false },
+        { "label": "LOCKUP · LIGHT ON DARK", "file": "Mark + WESAN in Inter Tight", "fg": "var(--paper)", "bg": "var(--ink)", "markOnly": false },
+        { "label": "MARK · DARK", "file": "mark-black.svg", "href": "/brand/mark-black.svg", "fg": "var(--ink)", "bg": "var(--paper-3)", "markOnly": true },
+        { "label": "MARK · IVORY", "file": "mark-ivory.svg", "href": "/brand/mark-ivory.svg", "fg": "#ECE9E2", "bg": "#05080E", "markOnly": true }
       ],
       "downloadSvgLabel": "DOWNLOAD SVG →",
       "colorsHead": { "num": "03", "label": "COLOR", "title": "Four colors. That's the whole brand." },
